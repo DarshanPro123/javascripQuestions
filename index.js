@@ -77,9 +77,11 @@ const myprofile = [
   },
 ];
 
-function addPropertie() {
-  const mydatta = myprofile.map((profile) => {
-    return { ...profile, job: "dev" };
+const jobs = ["ReactDev", "DajngoDev", "FrontEndDev", "BackendDev"];
+
+function addPropertie(jobs) {
+  const mydatta = myprofile.map((profile, index) => {
+    return { ...profile, job: jobs[index] };
   });
   return mydatta;
 }
@@ -112,7 +114,7 @@ console.log(mergingArrConc());
 console.log(addArrayBySpred());
 
 //4
-console.log(addPropertie());
+console.log(addPropertie(jobs));
 
 //5
 console.log(youngPeopleshow());

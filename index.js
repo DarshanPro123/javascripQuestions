@@ -14,8 +14,6 @@ function addElement() {
   updatedArr.unshift(3);
   //at fourth position
   updatedArr.splice(3, 2, "ds");
-  // it's splice using for 3 index to (3,1 it's stand for del that index value of current , add value or number)
-  //at last position
   updatedArr.push("Lss");
   return updatedArr;
 }

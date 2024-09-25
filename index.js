@@ -6,6 +6,31 @@ console.log("Grp");
 // 5. Create array of objects with properties firstname, lastname and age and add 1 property(job) in every object.
 // 6. Create array of objects with properties firstname, lastname and age and remove item if item’s age is 40.
 
+const myprofile = [
+  {
+    frstname: "Panchal",
+    lastname: "darshan",
+    age: 20,
+  },
+  {
+    frstname: "xyz",
+    lastname: "deepak",
+    age: 40,
+  },
+  {
+    frstname: "patel",
+    lastname: "krish",
+    age: 24,
+  },
+  {
+    frstname: "zzz",
+    lastname: "joanny",
+    age: 24,
+  },
+];
+
+const jobs = ["ReactDev", "DajngoDev", "FrontEndDev", "BackendDev"];
+
 function addElement() {
   const addArr = [1, "darshan", 2, 4, 4, 6];
   // copy of array
@@ -51,31 +76,6 @@ function addArrayBySpred() {
   const mixed2 = [...demA, ...demoB];
   return mixed2;
 }
-
-const myprofile = [
-  {
-    frstname: "Panchal",
-    lastname: "darshan",
-    age: 20,
-  },
-  {
-    frstname: "xyz",
-    lastname: "deepak",
-    age: 40,
-  },
-  {
-    frstname: "patel",
-    lastname: "krish",
-    age: 24,
-  },
-  {
-    frstname: "zzz",
-    lastname: "joanny",
-    age: 24,
-  },
-];
-
-const jobs = ["ReactDev", "DajngoDev", "FrontEndDev", "BackendDev"];
 
 function addPropertie(jobs) {
   const mydatta = myprofile.map((profile, index) => {

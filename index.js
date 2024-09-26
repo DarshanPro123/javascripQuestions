@@ -116,3 +116,23 @@ console.log(addPropertie(jobs));
 
 //5
 console.log(youngPeopleshow());
+
+// loops
+// for (let i = 0; i <= 20; i++) {
+//   if (i === 4 || i === 5) {
+//     continue;
+//   } else {
+//     console.log(i);
+//   }
+// }
+
+// let i = 0;
+// while (i < 10) {
+//   if (i === 4) {
+// i++
+//     continue;
+//   } else {
+//     console.log(i);
+//   }
+//   i++;
+// }

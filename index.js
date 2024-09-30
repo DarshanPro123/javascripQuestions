@@ -1,6 +1,9 @@
 console.log("Grp");
 
 // 1. Define an array with 6 elements and add an element at 1st, 4th, and last position.
+
+// <-------------------------------------1st question answer------------------------------>
+
 function addElementToArray() {
   const initialArray = [1, "darshan", 2, 4, 4, 6];
   // Copy of array
@@ -12,6 +15,8 @@ function addElementToArray() {
   updatedArray.push("Lss");
   return updatedArray;
 }
+
+// <-------------------------------------2nd question answer------------------------------>
 
 // First solution ---->
 function removeFourthElement() {
@@ -31,6 +36,8 @@ function removeElementBySlice() {
   return updatedList;
 }
 
+// <-------------------------------------3rd question answer------------------------------>
+
 // Merging arrays - First solution --------->
 function mergeArraysUsingConcat() {
   const firstArray = [1, 2, 4, 5, 6, 7];
@@ -47,6 +54,8 @@ function mergeArraysUsingSpread() {
   return mergedArrayUsingSpread;
 }
 
+// <-------------------------------------4th question answer------------------------------>
+
 // Adding job property to objects
 function addJobPropertyToProfiles(jobs) {
   const profilesWithJobs = myProfile.map((profile, index) => {
@@ -56,6 +65,8 @@ function addJobPropertyToProfiles(jobs) {
 }
 
 const allProfilesCopy = [...myProfile];
+
+// <-------------------------------------5th question answer------------------------------>
 
 // Removing items based on age
 function filterProfilesByAge() {

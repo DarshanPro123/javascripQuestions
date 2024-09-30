@@ -132,7 +132,7 @@ console.log(assignJobsToProfiles(jobs));
 // <-------------------------------------5th question answer------------------------------>
 
 // Removing items based on age
-function filterProfilesByAgeExcluding40() {
+function filterProfilesByAge() {
   const filteredProfiles = allProfilesCopy.filter(
     (profile) => profile.age !== 40
   );
@@ -140,4 +140,4 @@ function filterProfilesByAgeExcluding40() {
 }
 
 // Filtering young people profiles
-console.log(filterProfilesByAgeExcluding40());
+console.log(filterProfilesByAge());

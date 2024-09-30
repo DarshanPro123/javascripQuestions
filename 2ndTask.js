@@ -94,7 +94,7 @@ function getItemsStartingSevenIndex() {
   return numberArray.slice(0, 7); // Get items up to the seventh index
 }
 
-console.log(getItemsUpToSeventhIndex());
+console.log(getItemsStartingSevenIndex());
 
 // <-------------------------------------5th question answer------------------------------>
 

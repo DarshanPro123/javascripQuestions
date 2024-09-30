@@ -1,5 +1,3 @@
-console.log("Grp");
-
 // <-------------------------------------Object of Array with 7 elements------------------------------>
 
 const friends = [
@@ -60,15 +58,15 @@ console.log(getSortedArray(numbersToSort, "descending")); // Sorting array in de
 
 // <-------------------------------------2nd question answer------------------------------>
 
-function getFirstFiveFriends() {
+function getFirstFiveItems() {
   return friends.slice(0, 5);
 }
 
-console.log(getFirstFiveFriends());
+console.log(getFirstFiveItems());
 
 // <-------------------------------------3rd question answer------------------------------>
 
-function replaceFifthIndexColor() {
+function replaceFifthIndexItem() {
   const colors = [
     "red",
     "blue",
@@ -86,11 +84,11 @@ function replaceFifthIndexColor() {
   return updatedColors;
 }
 
-console.log(replaceFifthIndexColor());
+console.log(replaceFifthIndexItem());
 
 // <-------------------------------------4th question answer------------------------------>
 
-function getItemsUpToSeventhIndex() {
+function getItemsStartingSevenIndex() {
   const numberArray = [11, 22, 33, 44, 55, 66, 77, 88, 99, 111];
 
   return numberArray.slice(0, 7); // Get items up to the seventh index
@@ -100,7 +98,7 @@ console.log(getItemsUpToSeventhIndex());
 
 // <-------------------------------------5th question answer------------------------------>
 
-function findProfileByAge(age) {
+function getProfileByAge(age) {
   const profile = myProfile.find((profile) => profile.age === age);
   return profile || null; // profile is false than Return null
 }

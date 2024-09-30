@@ -1,4 +1,8 @@
-console.log("Grp");
+// 1. Defined array with 6 elements and add an element at 1st, 4th and last position.
+// 3. Defined array with 6 elements and remove an element from 4th position using any 2 solutions.
+// 4. Define 2 arrays and merge both arrays using any 2 solutions.
+// 5. Create array of objects with properties firstname, lastname and age and add 1 property(job) in every object.
+// 6. Create array of objects with properties firstname, lastname and age and remove item if item’s age is 40.
 
 const myProfile = [
   {
@@ -24,41 +28,41 @@ const myProfile = [
 ];
 
 // 1. Define an array with 6 elements and add an element at 1st, 4th, and last position.
-function addCarToList() {
-  const carList = ["Audi", "Bmw", "Toyota", "Mahindra", "Dodge", "Hyundai"];
+function addCar() {
+  const cars = ["Audi", "Bmw", "Toyota", "Mahindra", "Dodge", "Hyundai"];
 
   // Copy of array
-  const updatedArray = [...carList];
+  const updatedCar = [...cars];
 
   // Add at first position
-  updatedArray.unshift("Aston Martin");
+  updatedCar.unshift("Aston Martin");
 
   // Add at fourth position
-  updatedArray.splice(3, 0, "Bentley");
+  updatedCar.splice(3, 0, "Bentley");
 
   // Add at last position
-  updatedArray.push("Tesla");
+  updatedCar.push("Tesla");
 
-  return updatedArray;
+  return updatedCar;
 }
 
 // Adding elements to an array
-console.log(addCarToList());
+console.log(addCar());
 
 // <-------------------------------------2nd question answer------------------------------>
 
 // First solution ---->
 function removeElementAtFourthPosition() {
-  const numberArray = [1, 5, 334, 57, 5467, 346];
+  const numbers = [1, 5, 334, 57, 5467, 346];
 
   // Remove the element at the fourth position
-  numberArray.splice(3, 1);
+  numbers.splice(3, 1);
 
-  return numberArray;
+  return numbers;
 }
 
 // Second solution ---->
-function removeElementUsingSlice() {
+function removeElement() {
   const numberList = [1, 5, 334, 57, 5467, 346];
 
   const indexToRemove = 3;
@@ -72,8 +76,8 @@ function removeElementUsingSlice() {
 }
 
 // Deleting fourth element - two solutions
-console.log(removeElementAtFourthPosition());
-console.log(removeElementUsingSlice());
+console.log(removeElement());
+console.log(removeElement());
 
 // <-------------------------------------3rd question answer------------------------------>
 
@@ -89,20 +93,20 @@ const vegetables = [
   "Radishes",
 ];
 
-function mergeFruitsAndVegetablesUsingConcat(fruits, vegetables) {
-  const combinedArray = fruits.concat(vegetables);
+function mergeTwoArrays(firstArgument, SecoundArgument) {
+  const combinedArray = firstArgument.concat(SecoundArgument);
   return combinedArray;
 }
 
 // Merging arrays - Second solution ---------->
-function mergeFruitsAndVegetablesUsingSpread(fruits, vegetables) {
+function mergeTwoArraysUsingSpread(fruits, vegetables) {
   const mergedArrayUsingSpread = [...fruits, ...vegetables];
   return mergedArrayUsingSpread;
 }
 
 // Merging arrays - two solutions
-console.log(mergeFruitsAndVegetablesUsingConcat(fruits, vegetables));
-console.log(mergeFruitsAndVegetablesUsingSpread(fruits, vegetables));
+console.log(mergeTwoArrays(fruits, vegetables));
+console.log(mergeTwoArraysUsingSpread(fruits, vegetables));
 
 // <-------------------------------------4th question answer------------------------------>
 

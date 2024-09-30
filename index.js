@@ -24,30 +24,31 @@ const myProfile = [
 ];
 
 // 1. Define an array with 6 elements and add an element at 1st, 4th, and last position.
-function addNewCar() {
-  const CarsList = ["Audi", "Bmw", "Toyota", "Mahindra", "Dodge", "Hyundai"];
+function addCarToList() {
+  const carList = ["Audi", "Bmw", "Toyota", "Mahindra", "Dodge", "Hyundai"];
 
   // Copy of array
-  const updatedArray = [...CarsList];
+  const updatedArray = [...carList];
 
   // Add at first position
   updatedArray.unshift("Aston Martin");
 
-  // Add at fourth position (corrected index)
-  updatedArray.splice(3, 0, "Bentley"); // Change from '2' to '0' to insert without removing
+  // Add at fourth position
+  updatedArray.splice(3, 0, "Bentley");
 
   // Add at last position
-  updatedArray.push("Dodge");
+  updatedArray.push("Tesla");
 
   return updatedArray;
 }
+
 // Adding elements to an array
-console.log(addNewCar());
+console.log(addCarToList());
 
 // <-------------------------------------2nd question answer------------------------------>
 
 // First solution ---->
-function removeFourthElement() {
+function removeElementAtFourthPosition() {
   const numberArray = [1, 5, 334, 57, 5467, 346];
 
   // Remove the element at the fourth position
@@ -57,7 +58,7 @@ function removeFourthElement() {
 }
 
 // Second solution ---->
-function removeElementBySlice() {
+function removeElementUsingSlice() {
   const numberList = [1, 5, 334, 57, 5467, 346];
 
   const indexToRemove = 3;
@@ -69,9 +70,10 @@ function removeElementBySlice() {
 
   return updatedList;
 }
+
 // Deleting fourth element - two solutions
-console.log(removeFourthElement());
-console.log(removeElementBySlice());
+console.log(removeElementAtFourthPosition());
+console.log(removeElementUsingSlice());
 
 // <-------------------------------------3rd question answer------------------------------>
 
@@ -87,44 +89,51 @@ const vegetables = [
   "Radishes",
 ];
 
-function mergeArraysUsingConcat(fruits, vegetables) {
-  const shop = fruits.concat(vegetables);
-  return shop;
+function mergeFruitsAndVegetablesUsingConcat(fruits, vegetables) {
+  const combinedArray = fruits.concat(vegetables);
+  return combinedArray;
 }
 
 // Merging arrays - Second solution ---------->
-function mergeArraysUsingSpread(fruits, vegetables) {
+function mergeFruitsAndVegetablesUsingSpread(fruits, vegetables) {
   const mergedArrayUsingSpread = [...fruits, ...vegetables];
   return mergedArrayUsingSpread;
 }
 
 // Merging arrays - two solutions
-console.log(mergeArraysUsingConcat(fruits, vegetables));
-console.log(mergeArraysUsingSpread(fruits, vegetables));
+console.log(mergeFruitsAndVegetablesUsingConcat(fruits, vegetables));
+console.log(mergeFruitsAndVegetablesUsingSpread(fruits, vegetables));
 
 // <-------------------------------------4th question answer------------------------------>
 
 // Adding job property to objects
-function addJobPropertyToProfiles(jobs) {
+function assignJobsToProfiles(jobs) {
   const profilesWithJobs = myProfile.map((profile, index) => {
     return { ...profile, job: jobs[index] || "Unknown" }; // Added for jobs
   });
   return profilesWithJobs;
 }
 
-const jobs = ["Engineer", "Doctor", "Artist", "Teacher"]; // Example job array
+const jobs = [
+  "Software Developer",
+  "Data Scientist",
+  "Graphic Designer",
+  "Project Manager",
+]; // Updated job titles
 const allProfilesCopy = [...myProfile];
+
 // Adding job properties to profiles
-console.log(addJobPropertyToProfiles(jobs));
+console.log(assignJobsToProfiles(jobs));
 
 // <-------------------------------------5th question answer------------------------------>
 
 // Removing items based on age
-function filterProfilesByAge() {
+function filterProfilesByAgeExcluding40() {
   const filteredProfiles = allProfilesCopy.filter(
     (profile) => profile.age !== 40
   );
   return filteredProfiles;
 }
+
 // Filtering young people profiles
-console.log(filterProfilesByAge());
+console.log(filterProfilesByAgeExcluding40());

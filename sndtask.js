@@ -4,7 +4,7 @@
 // 10. Create an array with 10 elements and print items till 7th index only.
 // 11. Create array of objects with properties firstname, lastname and age and get the item if item’s age is 40 and print it.
 
-// <-------------------------------------Object of Array with 7 element------------------------------>
+// <-------------------------------------Object of Array with 7 elements------------------------------>
 
 const friends = [
   { id: 1, name: "Alice", age: 25 },
@@ -18,124 +18,89 @@ const friends = [
 
 // <-------------------------------------Object of Array with profile info------------------------------>
 
-const myprofile = [
+const myProfile = [
   {
-    frstname: "Panchal",
-    lastname: "darshan",
+    firstName: "Panchal",
+    lastName: "Darshan",
     age: 20,
   },
   {
-    frstname: "xyz",
-    lastname: "deepak",
+    firstName: "XYZ",
+    lastName: "Deepak",
     age: 40,
   },
   {
-    frstname: "patel",
-    lastname: "krish",
+    firstName: "Patel",
+    lastName: "Krish",
     age: 24,
   },
   {
-    frstname: "zzz",
-    lastname: "joanny",
+    firstName: "ZZZ",
+    lastName: "Joanny",
     age: 24,
   },
 ];
 
 // <-------------------------------------1st question answer------------------------------>
 
-function sortingAsen() {
-  const withOutsort = [2, 6, 35, 7, 4, 53, 23];
+function getSortArray(array, order = "ascending") {
+  const sortedArray = [...array]; // Create a copy of the original array
 
-  withOutsort.sort((a, b) => a - b);
-  return withOutsort;
+  sortedArray.sort((a, b) => {
+    //ternary operator
+    return order === "ascending" ? a - b : b - a;
+  });
+
+  return sortedArray;
 }
 
-console.log(sortingAsen()); // sorting array in assending
+const arrayToSort = [2, 6, 35, 7, 4, 53, 23];
 
-function sortingDesen() {
-  const withOutsort = [2, 6, 35, 7, 4, 53, 23];
-
-  withOutsort.sort((a, b) => b - a);
-
-  return withOutsort;
-}
-//sorting array in descending order with first value and secound value which b is big than a so it's first and a is secound
-
-console.log(sortingDesen());
-
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
+console.log(getSortArray(arrayToSort, "ascending")); // Sorting array in ascending order
+console.log(getSortArray(arrayToSort, "descending")); // Sorting array in descending order
 
 // <-------------------------------------2nd question answer------------------------------>
 
-function objeArray() {
-  const cpyFriend = friends.slice(0, 5);
-  return cpyFriend;
+function getFirstFiveFriends() {
+  const firstFiveFriends = friends.slice(0, 5);
+
+  return firstFiveFriends;
 }
 
-console.log(objeArray());
-
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
+console.log(getFirstFiveFriends());
 
 // <-------------------------------------3rd question answer------------------------------>
 
-function replaceChange() {
-  const withOutReplace = ["a", "b", "c", "d", "e", "f", "g"];
-  const cpyAlpha = [...withOutReplace];
+function replaceFifthString() {
+  const stringArray = ["a", "b", "c", "d", "e", "f", "g"];
 
-  //   withOutReplace[5] = "replace";
-  //   return withOutReplace;
+  const updatedArray = [...stringArray];
 
-  cpyAlpha.splice(5, 1, "Rainbow");
-  return cpyAlpha;
+  updatedArray.splice(5, 1, "Rainbow");
+
+  return updatedArray;
 }
 
-console.log(replaceChange());
-
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
+console.log(replaceFifthString());
 
 // <-------------------------------------4th question answer------------------------------>
 
-function desidedValue() {
-  const num = [11, 22, 33, 44, 55, 66, 77, 88, 99, 111];
+function getItemsUpToSeventhIndex() {
+  const numberArray = [11, 22, 33, 44, 55, 66, 77, 88, 99, 111];
 
-  const numOf7th = num.slice(0, 7);
-  return numOf7th;
+  const itemsUpToSeventh = numberArray.slice(0, 7);
+
+  return itemsUpToSeventh;
 }
 
-console.log(desidedValue());
-
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
-// .. .. .. .  .  .  .. .. .
+console.log(getItemsUpToSeventhIndex());
 
 // <-------------------------------------5th question answer------------------------------>
 
-function ProfileCheck() {
-  const greaterThan40 = myprofile.filter((mypro) => mypro.age === 40);
+function checkProfilesByAge() {
+  const profilesAtForty = myProfile.filter((profile) => profile.age === 40);
 
-  return greaterThan40;
+  return profilesAtForty;
 }
 
-console.log(ProfileCheck());
+console.log(checkProfilesByAge());

@@ -43,21 +43,21 @@ const myProfile = [
 
 // <-------------------------------------1st question answer------------------------------>
 
-function getSortArray(array, order = "ascending") {
-  const sortedArray = [...array]; // Create a copy of the original array
+function getSortArray(times, order = "ascending") {
+  const time = [...times]; // Create a copy of the original array
 
-  sortedArray.sort((a, b) => {
+  time.sort((a, b) => {
     //ternary operator
     return order === "ascending" ? a - b : b - a;
   });
 
-  return sortedArray;
+  return time;
 }
 
-const arrayToSort = [2, 6, 35, 7, 4, 53, 23];
+const getTime = [2, 6, 15, 7, 4, 23, 13];
 
-console.log(getSortArray(arrayToSort, "ascending")); // Sorting array in ascending order
-console.log(getSortArray(arrayToSort, "descending")); // Sorting array in descending order
+console.log(getSortArray(getTime, "ascending")); // Sorting array in ascending order
+console.log(getSortArray(getTime, "descending")); // Sorting array in descending order
 
 // <-------------------------------------2nd question answer------------------------------>
 
@@ -71,14 +71,22 @@ console.log(getFirstFiveFriends());
 
 // <-------------------------------------3rd question answer------------------------------>
 
-function replaceFifthString() {
-  const stringArray = ["a", "b", "c", "d", "e", "f", "g"];
+function replaceFifthColor() {
+  const colors = [
+    "red",
+    "blue",
+    "black",
+    "darkblue",
+    "white",
+    "green",
+    "darkgreen",
+  ];
 
-  const updatedArray = [...stringArray];
+  const updatedColors = [...colors];
 
-  updatedArray.splice(5, 1, "Rainbow");
+  updatedColors.splice(5, 1, "Rainbow");
 
-  return updatedArray;
+  return updatedColors;
 }
 
 console.log(replaceFifthString());
@@ -98,7 +106,9 @@ console.log(getItemsUpToSeventhIndex());
 // <-------------------------------------5th question answer------------------------------>
 
 function checkProfilesByAge() {
-  const profilesAtForty = myProfile.filter((profile) => profile.age === 40);
+  const profilesAtForty = myProfile
+    .filter((profile) => profile.age === 40)
+    .map((profile) => profile.age);
 
   return profilesAtForty;
 }

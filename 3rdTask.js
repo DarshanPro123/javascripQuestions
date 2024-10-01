@@ -22,6 +22,9 @@
 // toLowerCase() is to lowercase convert string or character
 
 //split("")// split string in character like c h r a c t e r
+//reduce // its reduce means reverse string or array using accumlator value and current value
+
+//return JSON.parse(JSON.stringify(data));
 
 // <------------------------------------------------------------------------------------------------------------->
 

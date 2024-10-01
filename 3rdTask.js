@@ -16,12 +16,26 @@
 // 9. Can you write a function in JavaScript to convert a string containing hyphens and underscores to camel case?
 // 10. Can you write a function in JavaScript to count the occurrences of each element in an array and return the result as an object?
 
+// <<--------------------------------What i USed Of functions and logics and methods----------------------------->>
+
+//replace() // its simple to replace to items to string
+// toLowerCase() is to lowercase convert string or character
+
+//split("")// split string in character like c h r a c t e r
+
+// <------------------------------------------------------------------------------------------------------------->
+
 // <------------------------------1st Solution------------------------------->
 
 const message = "wood00@@0222dw";
+
+const string = "1234DF##%GFGB";
+
 const messageOfPalindrom = "Too hot to hoot";
 const isPalindromeItem = (string) => {
-  const cleanMessage = string.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+  const cleanMessage = string
+    .replace(/[^a-zA-Z0-9]/g, "") //Toohottohoot
+    .toLowerCase(); //toohottohoot
 
   //means of [^]/g global expression check to a-z and A-z
   //special character are removed like !@#$%^&*
@@ -64,10 +78,11 @@ const Profiles = [
 
 const getSortingItem = (object, key) => {
   const getProfileByAge = object.sort((a, b) => a[key] - b[key]);
+
   return getProfileByAge;
 };
 
-console.log(getSortingItem(Profiles, "age"));
+console.log("2nd Solution----------->", getSortingItem(Profiles, "age"));
 
 // <----------------------------3rd Solution---------------------------->
 
@@ -107,7 +122,11 @@ console.log(getDeepCloneItem(carsInfo, colors));
 // <----------------------------4th Solution---------------------------->
 
 const getAnagramItem = (item1, item2) => {
-  const cloneItem1 = item1.toLowerCase().split("").sort().join("");
+  const cloneItem1 = item1
+    .toLowerCase()
+    .split("") //[ 'c', 'a', 't' ]
+    .sort() // output ['a','c','t']
+    .join(""); // act
   const cloneItem2 = item2.toLowerCase().split("").sort().join("");
   return cloneItem1 === cloneItem2;
 };

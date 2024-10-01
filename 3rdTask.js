@@ -19,7 +19,7 @@
 // <------------------------------1st Solution------------------------------->
 
 const message = "wood00@@0222dw";
-const messageOfInform = "Too hot to hoot";
+const messageOfPalindrom = "Too hot to hoot";
 const getPalindromeItem = (string) => {
   const cleanMessage = string.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
 
@@ -33,7 +33,8 @@ const getPalindromeItem = (string) => {
   return cleanMessage === palindromeMessage;
 };
 
-console.log(getPalindromeItem(messageOfInform));
+console.log(getPalindromeItem(message));
+console.log(getPalindromeItem(messageOfPalindrom));
 
 // <----------------------------2nd Solution---------------------------->
 
@@ -62,3 +63,165 @@ const getChildToYoung = (object, key) => {
 };
 
 console.log(getChildToYoung(Profiles, "age"));
+
+// <----------------------------3rd Solution---------------------------->
+
+const carsInfo = {
+  name: "Toyota",
+  model: "Camry",
+  year: 2021,
+  color: ["Blue"],
+  mileage: 15000,
+};
+const colors = ["red", "white", "black", "gray"];
+
+const getDeepCloneItem = (itemsObject, items) => {
+  const cloneItems = { ...itemsObject };
+  cloneItems.color.push(...items);
+  return cloneItems;
+};
+
+console.log(getDeepCloneItem(carsInfo, colors));
+
+// <----------------------------4th Solution---------------------------->
+
+const animal = "cat";
+const string = "act";
+
+const getAnagramItem = (item1, item2) => {
+  const cloneItem1 = item1.toLowerCase().split("").sort().join("");
+  const cloneItem2 = item2.toLowerCase().split("").sort().join("");
+  return cloneItem1 === cloneItem2;
+};
+
+console.log(getAnagramItem("cat", "act"));
+
+// <----------------------------5th Solution---------------------------->
+// Write a JavaScript program to list the properties of a JavaScript object.
+const myProfile = {
+  name: "XZD",
+  age: 34,
+  height: 300,
+  weight: 60,
+  skill: "Swiming",
+};
+console.log(myProfile);
+
+const getProperties = (object) => {
+  const getProfile = Object.keys(object).map((key) => key);
+  //   const getProfile = Object.values(object).map((key) => key); it's print values of object
+  return getProfile;
+};
+
+console.log(getProperties(myProfile));
+
+// <----------------------------6th Solution---------------------------->
+
+const student = {
+  name: "David Rayy",
+  sclass: "VI",
+  rollno: 12,
+};
+
+console.log("Original student object:", student);
+
+const removeRollNo = (object) => {
+  // Create a new object to avoid mutating the original
+  const { rollno, ...updatedObject } = object; // remove OR Dstrucring->> "roll no" using rest oprator
+  return updatedObject;
+};
+
+console.log(removeRollNo(student));
+
+// <----------------------------7th Solution---------------------------->
+
+const getStudent = { ...student };
+
+const getSwipeProperties = (object) => {
+  const swappedObject = {};
+
+  for (const key in object) {
+    // swaping two value in each other
+
+    const value = object[key];
+    swappedObject[value] = key;
+  }
+  return swappedObject;
+};
+
+console.log(getSwipeProperties(getStudent));
+
+// <----------------------------8th Solution---------------------------->
+//Can you write a function in JavaScript to merge two objects without overwriting existing properties?
+
+const students = {
+  name: "XYZ",
+  school: "BabyBaba",
+  rollNO: 12,
+  sClass: "9th",
+};
+const teacher = {
+  teacherName: "YYz",
+  school: "BabyBaba",
+  mediam: "Hindi",
+  sClass: "9th",
+};
+
+const getMergeItems = (object1, object2) => {
+  const mergeItems = { ...object1, ...object2 };
+  return mergeItems;
+};
+
+console.log(getMergeItems(students, teacher));
+
+// <----------------------------9th Solution---------------------------->
+//Can you write a function in JavaScript to convert a string containing hyphens and underscores to camel case?
+const message1 = "hello-panchal";
+const message2 = "hello-panchal";
+const message3 = "My_word_is_perfect";
+
+const getCamelCaseItem = (item) => {
+  const camelCaseItem = item
+    .split(/[-_]/) // remove or split that from string
+    .map((char, i) => {
+      if (i === 0) {
+        return char;
+      }
+      return char.charAt(0).toUpperCase() + char.slice(1).toLowerCase();
+    })
+    .join(""); /// to array to string convert
+
+  return camelCaseItem;
+};
+
+console.log(getCamelCaseItem(message3));
+
+// <----------------------------10th Solution---------------------------->
+
+const fruitsShop = [
+  "apple",
+  "banana",
+  "Gavava",
+  "orange",
+  "apple",
+  "banana",
+  "apple",
+  "banana",
+  "orange",
+];
+
+const countItems = (items) => {
+  const counter = {};
+
+  items.map((item) => {
+    if (counter[item]) {
+      counter[item] += 1;
+    } else {
+      counter[item] = 1;
+    }
+  });
+
+  return counter;
+};
+
+console.log(countItems(fruitsShop));

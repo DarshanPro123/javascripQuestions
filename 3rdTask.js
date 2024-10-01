@@ -20,21 +20,26 @@
 
 const message = "wood00@@0222dw";
 const messageOfPalindrom = "Too hot to hoot";
-const getPalindromeItem = (string) => {
+const isPalindromeItem = (string) => {
   const cleanMessage = string.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
 
   //means of [^]/g global expression check to a-z and A-z
   //special character are removed like !@#$%^&*
 
   const palindromeMessage = cleanMessage
-    .split("") //split all word in part of words
+    .split("") //split all word in part of words ["M", "A", "D", "A", "M"]
     .reduce((acc, val) => val + acc, "");
+  //    M + ""
+  //    A + M
+  //    D + AM
+  //    A + DAM
+  //    M + ADAM
 
   return cleanMessage === palindromeMessage;
 };
 
-console.log(getPalindromeItem(message));
-console.log(getPalindromeItem(messageOfPalindrom));
+console.log(isPalindromeItem("MADAM"));
+console.log(isPalindromeItem(messageOfPalindrom));
 
 // <----------------------------2nd Solution---------------------------->
 
@@ -57,12 +62,12 @@ const Profiles = [
   },
 ];
 
-const getChildToYoung = (object, key) => {
+const getSortingItem = (object, key) => {
   const getProfileByAge = object.sort((a, b) => a[key] - b[key]);
   return getProfileByAge;
 };
 
-console.log(getChildToYoung(Profiles, "age"));
+console.log(getSortingItem(Profiles, "age"));
 
 // <----------------------------3rd Solution---------------------------->
 
@@ -74,6 +79,22 @@ const carsInfo = {
   mileage: 15000,
 };
 const colors = ["red", "white", "black", "gray"];
+
+let a = {
+  name: "Toyota",
+  model: "Camry",
+  year: 2021,
+  color: ["Blue"],
+  mileage: 15000,
+};
+
+const getClonedObj = (data) => {
+  return JSON.parse(JSON.stringify(data));
+};
+
+let b = getClonedObj(a);
+b.name = "Hyundai";
+console.log(a.name);
 
 const getDeepCloneItem = (itemsObject, items) => {
   const cloneItems = { ...itemsObject };
@@ -105,7 +126,7 @@ const myProfile = {
 console.log(myProfile);
 
 const getProperties = (object) => {
-  const getProfile = Object.keys(object).map((key) => key);
+  const getProfile = Object.keys(object);
   //   const getProfile = Object.values(object).map((key) => key); it's print values of object
   return getProfile;
 };
@@ -153,7 +174,7 @@ console.log(getSwipeProperties(getStudent));
 
 const students = {
   name: "XYZ",
-  school: "BabyBaba",
+  school: "abc",
   rollNO: 12,
   sClass: "9th",
 };
@@ -178,7 +199,7 @@ const message2 = "hello-panchal";
 const message3 = "My_word_is_perfect";
 
 const getCamelCaseItem = (item) => {
-  const camelCaseItem = item
+  const camelCaseItem = item // hello-panchal
     .split(/[-_]/) // remove or split that from string
     .map((char, i) => {
       if (i === 0) {

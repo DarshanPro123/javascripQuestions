@@ -85,9 +85,6 @@ console.log(getDeepCloneItem(carsInfo, colors));
 
 // <----------------------------4th Solution---------------------------->
 
-const animal = "cat";
-const string = "act";
-
 const getAnagramItem = (item1, item2) => {
   const cloneItem1 = item1.toLowerCase().split("").sort().join("");
   const cloneItem2 = item2.toLowerCase().split("").sort().join("");
@@ -125,13 +122,13 @@ const student = {
 
 console.log("Original student object:", student);
 
-const removeRollNo = (object) => {
+const removePropertie = (object) => {
   // Create a new object to avoid mutating the original
   const { rollno, ...updatedObject } = object; // remove OR Dstrucring->> "roll no" using rest oprator
   return updatedObject;
 };
 
-console.log(removeRollNo(student));
+console.log(removePropertie(student));
 
 // <----------------------------7th Solution---------------------------->
 

@@ -17,7 +17,6 @@ const array2 = [6, 7, 8, 2, 3, 5, 10];
 const checkCommonItem = () => {
   return array1.some((item) => array2.includes(item));
 };
-
 console.log("common", checkCommonItem());
 
 // 3. How to merge two arrays and remove duplicate items in JavaScript?

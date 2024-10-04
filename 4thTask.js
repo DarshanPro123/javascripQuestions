@@ -19,7 +19,6 @@ const removeDuplicateElements = (items) => {
   const uniqueNumbers = [];
   items.forEach((item) => {
     if (!uniqueNumbers.includes(item)) {
-      // if number is not in uniqueNumbers array
       uniqueNumbers.push(item);
     }
   });
@@ -29,24 +28,21 @@ const removeDuplicateElements = (items) => {
 console.log(removeDuplicateElements(numbers));
 
 // 2. How to Find if Two Arrays Contain any Common Item in JavaScript?
-const array1 = [1, 2, 3, 4, 5];
+const array1 = [1, 2, 3, 4];
 const array2 = [6, 7, 8, 2, 3, 5, 10];
 
 const checkCommonItem = () => {
-  const notCommon = array1.includes(array2); //another value
-  const common = array1.some((item) => array2.includes(item)); // 2,3,5 : true
-  return common;
+  return array1.some((item) => array2.includes(item));
 };
 
-console.log(checkCommonItem());
+console.log("common", checkCommonItem());
 
 // 3. How to merge two arrays and remove duplicate items in JavaScript ?
 const item1 = [1, 2, 3, 4, 5];
 const item2 = [6, 7, 8, 2, 10];
 
 const mergeItems = () => {
-  const mergeItems = [...new Set([...item1, ...item2])];
-  return mergeItems;
+  return new Set([...item1, ...item2]);
 };
 
 console.log(mergeItems());
@@ -78,17 +74,104 @@ console.log("max frequent number:", getFrequetItem(randomNumbers));
 console.log("max frequent items:", getFrequetItem(shopItems));
 
 //5.Create objects in 4 different way JavaScript.
-const Profile1 = {
+const Person1 = {
   name: "John",
   surname: "semos",
   age: 30,
 };
 
-console.log(Profile1);
+console.log("person1", Person1);
 
 //another way 2:-
+// object constructor
+// new Object method
+const person2 = new Object();
+person2.name = "John";
+person2.age = 23;
+person2.name = "sdfgh"; //overwrite
 
-const Profile2 = new Object();
-Profile2.name = "John";
+console.log("person2", person2);
 
-console.log(Profile2);
+//another way3:-
+
+// function wise object make
+
+function setProfile3(value1, value2) {
+  this.name = value1;
+  this.age = value2;
+}
+
+const person3 = new setProfile3("ABC", 34);
+
+console.log("person3", person3);
+
+//way 4:
+
+const Profile4 = {};
+
+const person4 = Object.create(Profile4);
+
+person4.name = "gg";
+person4.age = 60;
+console.log("person4", person4);
+
+//6. How to convert two-dimensional array into an object in JavaScript
+
+const Element1 = [
+  ["number", 123],
+  ["string", "ABC"],
+  ["mixes", "123Abc"],
+];
+
+const Element2 = { ...Object.fromEntries(Element1) };
+console.log(Element2);
+
+//7.JavaScript Program to Check if a Given Year is Leap Year.
+
+const year = 1881;
+
+const isLeapYear = (year) => {
+  if (year % 4 === 0 || year % 100 === 0 || year % 400 === 0) {
+    return true;
+  } else return false;
+};
+
+console.log(isLeapYear(year));
+
+//8.How to check if
+const targetDate = new Date("2024-05-15"); // Date to check
+const startDate = new Date("2024-06-01"); // Start of range
+const endDate = new Date("2024-05-31"); // End of range
+
+const isDateInRange = (dateToCheck, startDate, endDate) => {
+  return dateToCheck >= startDate && dateToCheck <= endDate;
+};
+
+console.log("Date is", isDateInRange(targetDate, startDate, endDate));
+
+//9. How to format numbers as currency string in JavaScript ?
+
+const number = 123456.789;
+const formattedCurrency = number.toLocaleString("IND", {
+  style: "currency",
+  currency: "INR",
+});
+console.log(formattedCurrency);
+
+//10. How to find the longest word within the string in JavaScript?
+
+const word = "The abc abcsddddddddd abbbbbb anssdsdfsdff dsfsdgreg ";
+
+const getLongestValue = (item) => {
+  const words = item.split(" ");
+  let longest = "";
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > longest.length) {
+      longest = words[i];
+    }
+  }
+
+  return longest;
+};
+
+console.log(getLongestValue(word));

@@ -4,39 +4,40 @@ console.clear();
 // 2. Write a function to find the largest numbers that can be formed by swapping two numbers of a given number.
 // 3. Write a function to calculate the nth number in the Tribonacci sequence.
 
-const firstDate = new Date("2024-10-07");
+const firstDate = new Date("2024-10-01");
 
-const lastDate = new Date("2025-01-14");
+const lastDate = new Date("2024-10-30");
+console.log(firstDate);
 
-const calculateDays = (firstDate, lastDate) => {
-  const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-  const differentDays = Math.abs((firstDate - lastDate) / oneDay);
-  return differentDays;
+const getDaysByDates = (firstDate, lastDate) => {
+  const oneDay = 24 * 60 * 60 * 1000;
+  const diffrentDate = Math.abs((firstDate - lastDate) / oneDay);
+  return diffrentDate;
 };
 
-console.log(calculateDays(firstDate, lastDate));
+console.log(getDaysByDates(firstDate, lastDate));
 
 //2. Write a function to find the largest numbers that can be formed by swapping two numbers of a given number.
 
 const getMaximumValue = (num) => {
   const stringValue = num.toString().split("");
-  const maximumValue = stringValue
-    .slice()
-    .sort((a, b) => b - a)
-    .join("");
+  const maximumValue = stringValue.sort((a, b) => b - a).join("");
   return maximumValue;
 };
 
-console.log(getMaximumValue(2342));
+console.log(getMaximumValue(54324));
 
 //3. Write a function to calculate the nth number in the Tribonacci  sequence.
 
 const getTribonacci = (n) => {
-  const tribonacci = [0, 0, 1];
-  for (let i = 3; i <= n; i++) {
-    tribonacci[i] = tribonacci[i - 1] + tribonacci[i - 2] + tribonacci[i - 3];
+  const item = [0, 0, 1];
+  if (n < 3) {
+    return item[n];
   }
-  return tribonacci[n];
+  for (let i = 3; i <= n; i++) {
+    item[i] = item[i - 1] + item[i - 2] + item[i - 3];
+  }
+  return item[n];
 };
 
-console.log(getTribonacci(12));
+console.log(getTribonacci(1));

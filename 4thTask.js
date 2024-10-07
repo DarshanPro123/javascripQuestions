@@ -15,7 +15,12 @@ const array1 = [1, 2, 3, 4];
 const array2 = [6, 7, 8, 2, 3, 5, 10];
 
 const checkCommonItem = () => {
-  return array1.some((item) => array2.includes(item));
+  for (let i = 0; i < array1.length; i++) {
+    if (array2.includes(array1[i])) {
+      return true; // A common item is found
+    }
+  }
+  return false; // No common items found
 };
 
 console.log("common", checkCommonItem());

@@ -14,6 +14,21 @@ const calculateDays = (firstDate, lastDate) => {
 
 console.log(calculateDays(firstDate, lastDate));
 
+//2. Write a function to find the largest numbers that can be formed by swapping two numbers of a given number.
+
 const swapNumbers = (num) => {
-  //make that swaping using two solutions
+  const numStr = num.toString().split("");
+  const maxNum = numStr
+    .slice()
+    .sort((a, b) => b - a)
+    .join("");
+  const minNum = numStr
+    .slice()
+    .sort((a, b) => a - b)
+    .join("");
+  return [maxNum, minNum];
 };
+
+console.log(swapNumbers(3734));
+
+//3.

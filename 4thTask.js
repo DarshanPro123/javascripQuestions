@@ -22,7 +22,6 @@ const checkCommonItem = () => {
   }
   return false; // No common items found
 };
-
 console.log("common", checkCommonItem());
 
 // 3. How to merge two arrays and remove duplicate items in JavaScript?
